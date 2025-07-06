@@ -1,7 +1,7 @@
 const userModel = require("../Model/userModel");
 
 const getUser = async (req, res) => {
-  try {message
+  try {
     const user = await userModel.find();
 
     if (!user) {
@@ -59,7 +59,6 @@ const createUser = async (req, res) => {
     res.status(500).json({ error: e.message });
 
 	}
-  
 };
 
 const deleteUser = async (req, res) => {
