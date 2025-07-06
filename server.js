@@ -1,10 +1,13 @@
 const express = require("express")
 const app = express();
+const dotenv = require("dotenv")
+const userRoute = require("./Routes/userRoute")
+dotenv.config();
 
-app.get('/',(req,res)=>{
-	res.send("Vanakam da mapla")
-})
+const PORT = process.env.PORT;
 
-app.listen(2605,()=>{
-	console.log("http://localhost:2605");
+app.use('/user',userRoute)
+
+app.listen(PORT,()=>{
+	console.log(`http://localhost:${PORT}`);
 })
